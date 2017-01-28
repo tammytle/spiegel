@@ -9,13 +9,12 @@ function mapDispatchToProps() {
   return {};
 }
 
-function AboutPage() {
+function DashboardPage() {
   return (
     <div>
-      <h2 className="caps">About Us</h2>
+      <h2 className="caps">Dashboard</h2>
       <p>
-        Rangle.io is a next-generation HTML5 design and development firm
-        dedicated to modern, responsive web and mobile applications.
+        Test!
       </p>
     </div>
   );
@@ -24,4 +23,4 @@ function AboutPage() {
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(AboutPage);
+)(DashboardPage);

@@ -1,10 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-
-import { increment, decrement } from '../actions/counter';
-
-import Counter from '../components/counter';
-import Container from '../components/container';
+import { push } from 'react-router-redux';
+import { increment, decrement, reset } from '../actions/counter';
 
 function mapStateToProps(state) {
   return {
@@ -16,19 +13,23 @@ function mapDispatchToProps(dispatch) {
   return {
     increaseCounter: () => dispatch(increment()),
     decreaseCounter: () => dispatch(decrement()),
+    resetCounter: () => dispatch(reset()),
+    goToAboutPage: () => dispatch(push('/about')),
   };
 }
 
-function CounterPage({ counter, increaseCounter, decreaseCounter }) {
+function CounterPage({ counter, increaseCounter, decreaseCounter, resetCounter, goToAboutPage }) {
   return (
-    <Container testid="counter" size={2} center>
-      <h2 data-testid="counter-heading" className="center caps" id="qa-counter-heading">Counter</h2>
-
-      <Counter
-        counter={ counter }
-        increment={ increaseCounter }
-        decrement={ decreaseCounter } />
-    </Container>
+    <div>
+      <div>Show Counter Page Component</div>
+      <div>
+        <div>Count: {counter}</div>
+        <div><button onClick={increaseCounter}>Increase</button></div>
+        <div><button onClick={decreaseCounter}>Decrease</button></div>
+        <div><button onClick={resetCounter}>Reset</button></div>
+      </div>
+      <div><button onClick={goToAboutPage}>Go to About Page</button></div>
+    </div>
   );
 }
 
@@ -36,6 +37,8 @@ CounterPage.propTypes = {
   counter: React.PropTypes.number,
   increaseCounter: React.PropTypes.func,
   decreaseCounter: React.PropTypes.func,
+  resetCounter: React.PropTypes.func,
+  goToAboutPage: React.PropTypes.func
 };
 
 export default connect(

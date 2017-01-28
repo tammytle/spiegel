@@ -1,8 +1,8 @@
-import { INCREMENT_COUNTER, DECREMENT_COUNTER, LOGOUT_USER } from '../constants';
+import { INCREMENT_COUNTER, DECREMENT_COUNTER, RESET_COUNTER } from '../constants';
 import { fromJS } from 'immutable';
 
 const INITIAL_STATE = fromJS({
-  count: 0,
+  count: 0
 });
 
 function counterReducer(state = INITIAL_STATE, action = {}) {
@@ -14,8 +14,8 @@ function counterReducer(state = INITIAL_STATE, action = {}) {
   case DECREMENT_COUNTER:
     return state.update('count', (value) => value - 1);
 
-  case LOGOUT_USER:
-    return state.merge(INITIAL_STATE);
+  case RESET_COUNTER:
+    return state.update('count', () => 0);
 
   default:
     return state;
