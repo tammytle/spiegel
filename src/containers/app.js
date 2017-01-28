@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 function App({children}) {
   return (
     <div>
-      This is a nav
+      This is a navx
       { children }
     </div>
   );
