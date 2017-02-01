@@ -6,9 +6,14 @@ exports.eslint = {
   loader: 'eslint-loader',
 };
 
+exports.pcss = {
+  test: /\.pcss$/,
+  loader: 'style-loader!css?-minimize!postcss',
+};
+
 exports.css = {
   test: /\.css$/,
-  loader: 'style-loader!css?-minimize!postcss',
+  loader: 'style-loader!css?-minimize',
 };
 
 const jsloaders = [];
