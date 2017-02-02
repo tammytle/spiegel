@@ -9,11 +9,11 @@ function mapDispatchToProps() {
   return {};
 }
 
-function DashboardPage() {
+function CreateLikesDislikes() {
   return (
     <div className="row">
       <div className="large-12 columns">
-        <h1 className="caps">Dashboard</h1>
+        <h1 className="caps">Likes & Dislikes</h1>
         <p>
           Test!
         </p>
@@ -25,4 +25,4 @@ function DashboardPage() {
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(DashboardPage);
+)(CreateLikesDislikes);

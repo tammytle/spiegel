@@ -13,10 +13,13 @@ class LoginPage extends Component {
 
   render() {
     return (
-      <div>
-          <input type="text" value={this.state.username} onChange={(e) => this.updateState('username')(e)}/>
-          <input type="password" value={this.state.password} onChange={(e) => this.updateState('password')(e)}/>
-          <button onClick={this.props.login(this.state.username, this.state.password)}>Login</button>
+      <div className="row">
+        <div className="large-4 large-offset-4 columns">
+        <h4>Log In</h4>
+            <input type="text" value={this.state.username} onChange={(e) => this.updateState('username')(e)}/>
+            <input type="password" value={this.state.password} onChange={(e) => this.updateState('password')(e)}/>
+            <button className="button" onClick={this.props.login(this.state.username, this.state.password)}>Login</button>
+          </div>
       </div>
     );
   }
