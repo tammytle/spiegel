@@ -12,7 +12,7 @@ import CreateDailyLivingPage from '../containers/create-daily-living';
 import CreateHobbiesPage from '../containers/create-hobbies-page';
 import CreateLikesDislikes from '../containers/create-likes-dislikes';
 import CreateBehavioursPage from '../containers/create-behaviours-page';
-import LoginPage from '../containers/LoginPage';
+import LoginPage from '../containers/login-page';
 
 
 export default (

@@ -1,4 +1,5 @@
 import { LOGIN_USER } from '../constants';
+import { LOGOUT_USER } from '../constants';
 import { fromJS } from 'immutable';
 
 const INITIAL_STATE = fromJS({
@@ -21,6 +22,9 @@ function helloReducer(state = INITIAL_STATE, action = {}) {
   case LOGIN_USER:
     const foundUser = state.get('possibleUsers').find((user) => user.get('username') === action.payload.username && user.get('password') === action.payload.password) || null;
     return state.set('currentUser', foundUser);
+
+  case LOGOUT_USER:
+    return state.set('currentUser', null);
 
   default:
     return state;
