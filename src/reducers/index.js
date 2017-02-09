@@ -3,12 +3,12 @@ import { routerReducer } from 'react-router-redux';
 import { reducer as formReducer } from 'redux-form';
 import counter from './counter';
 import hello from './hello';
-import basicinfo from './basicinfo';
+import addProfileInfo from './addProfileInfo';
 
 const rootReducer = combineReducers({
   counter,
   hello,
-  basicinfo,
+  addProfileInfo,
   routing: routerReducer,
   form: formReducer,
 });

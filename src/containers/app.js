@@ -4,22 +4,25 @@ import { push } from 'react-router-redux';
 import { logout } from '../actions/session';
 import LoginPage from '../containers/login-page';
 
-function App({children, goToDashboardPage, goToCreateBasicInfoPage, goToCreateLifeStoryPage, goToCreateRoutinePage, goToCreateMealTimePage, goToCreateDailyLivingPage, goToCreateHobbiesPage, goToCreateLikesDislikes, goToCreateBehavioursPage, logoutAction, isLoggedin}) {
+function App({children, goToDashboardPage, goToCreateBasicInfoPage, goToCreateLifeStoryPage, goToCreateRoutinePage, goToCreateMealTimePage, goToCreateDailyLivingPage, goToCreateHobbiesPage, goToCreateLikesDislikes, goToCreateBehavioursPage, goToMedicalInformation, logoutAction, isLoggedin}) {
   return (
 
     <div>
       <div className="row">
         <div className="large-12 columns">
-        {isLoggedin ? <button type="button" className="button" onClick={goToDashboardPage}>Dashboard</button> : null}
-        {isLoggedin ? <button type="button" className="button" onClick={goToCreateBasicInfoPage}>Basic Information</button> : null}
-        {isLoggedin ? <button type="button" className="button" onClick={goToCreateLifeStoryPage}>Life Story</button> : null}
-        {isLoggedin ? <button type="button" className="button" onClick={goToCreateRoutinePage}>Routine</button> : null}
-        {isLoggedin ? <button type="button" className="button" onClick={goToCreateMealTimePage}>Meal Time</button> : null}
-        {isLoggedin ? <button type="button" className="button" onClick={goToCreateDailyLivingPage}>Daily Living</button> : null}
-        {isLoggedin ? <button type="button" className="button" onClick={goToCreateHobbiesPage}>Hobbies</button> : null}
-        {isLoggedin ? <button type="button" className="button" onClick={goToCreateLikesDislikes}>Likes & Dislikes</button> : null}
-        {isLoggedin ? <button type="button" className="button" onClick={goToCreateBehavioursPage}>Behaviours</button> : null}
-        {isLoggedin ? <button type="button" className="button" onClick={logoutAction}>Logout</button> : null}
+          <div className="button-group">
+            {isLoggedin ? <a className="button" onClick={goToDashboardPage}>Dashboard</a> : null}
+            {isLoggedin ? <a className="button" onClick={goToCreateBasicInfoPage}>Basic Information</a> : null}
+            {isLoggedin ? <a className="button" onClick={goToMedicalInformation}>Medical Information</a> : null}
+            {isLoggedin ? <a className="button" onClick={goToCreateLifeStoryPage}>Life Story</a> : null}
+            {isLoggedin ? <a className="button" onClick={goToCreateRoutinePage}>Routine</a> : null}
+            {isLoggedin ? <a className="button" onClick={goToCreateMealTimePage}>Meal Time</a> : null}
+            {isLoggedin ? <a className="button" onClick={goToCreateDailyLivingPage}>Daily Living</a> : null}
+            {isLoggedin ? <a className="button" onClick={goToCreateHobbiesPage}>Hobbies</a> : null}
+            {isLoggedin ? <a className="button" onClick={goToCreateLikesDislikes}>Likes & Dislikes</a> : null}
+            {isLoggedin ? <a className="button" onClick={goToCreateBehavioursPage}>Behaviours</a> : null}
+            {isLoggedin ? <a className="button secondary" onClick={logoutAction}>Logout</a> : null}
+          </div>
         </div>
       </div>
       { isLoggedin ? children : <LoginPage/> }
@@ -38,6 +41,7 @@ App.propTypes = {
   goToCreateHobbiesPage: React.PropTypes.func,
   goToCreateLikesDislikes: React.PropTypes.func,
   goToCreateBehavioursPage: React.PropTypes.func,
+  goToMedicalInformation: React.PropTypes.func,
   isLoggedin: React.PropTypes.bool,
   logoutAction: React.PropTypes.func,
 };
@@ -53,6 +57,7 @@ function mapDispatchToProps(dispatch) {
     goToCreateHobbiesPage: () => dispatch(push('/create-hobbies-page')),
     goToCreateLikesDislikes: () => dispatch(push('/create-likes-dislikes')),
     goToCreateBehavioursPage: () => dispatch(push('/create-behaviours-page')),
+    goToMedicalInformation: () => dispatch(push('/create-medical-information')),
     logoutAction: () => dispatch(logout()),
   };
 }
@@ -60,7 +65,6 @@ function mapDispatchToProps(dispatch) {
 function mapStateToProps(state) {
   return {
     isLoggedin: state.hello.get('currentUser') !== null,
-    goToCreateBasicInfoPage: state.basicinfo.get('currentFirstName') !== null
   };
 }
 

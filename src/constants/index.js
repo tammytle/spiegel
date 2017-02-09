@@ -3,7 +3,15 @@ export const DECREMENT_COUNTER = 'App/DECREMENT_COUNTER';
 export const RESET_COUNTER = 'App/RESET_COUNTER';
 
 export const LOGIN_USER = 'App/LOGIN_USER';
-export const BASIC_INFO = 'App/BASIC_INFO';
-
 export const LOGOUT_USER = 'App/LOGOUT_USER';
+
+export const ADD_BASIC_INFO = 'App/ADD_BASIC_INFO';
+export const ADD_MEDICAL_INFO = 'App/ADD_MEDICAL_INFO';
+export const ADD_LIFE_STORY = 'App/ADD_LIFE_STORY';
+export const ADD_ROUTINE_INFO = 'App/ADD_ROUTINE_INFO';
+export const ADD_MEAL_TIME = 'App/ADD_MEAL_TIME';
+export const ADD_USER_CARE_PROFILE = 'App/ADD_USER_CARE_PROFILE';
+
+export const NEW_PROFILE_SAVE_CARE_PREFERENCES = 'App/NEW_PROFILE_SAVE_CARE_PREFERENCES';
+
 export const FORM_RESET = 'redux-form/RESET';

@@ -12,12 +12,13 @@ import CreateDailyLivingPage from '../containers/create-daily-living';
 import CreateHobbiesPage from '../containers/create-hobbies-page';
 import CreateLikesDislikes from '../containers/create-likes-dislikes';
 import CreateBehavioursPage from '../containers/create-behaviours-page';
+import CreateMedicalInformation from '../containers/create-medical-information';
 import LoginPage from '../containers/login-page';
 
 
 export default (
   <Route path="/" component={ App }>
-    <IndexRoute component={ LoginPage }/>
+    <IndexRoute component={ DashboardPage }/>
     <Route path="about" component={ AboutPage }/>
     <Route path="counter" component={ CounterPage }/>
     <Route path="dashboard" component={ DashboardPage }/>
@@ -29,6 +30,7 @@ export default (
     <Route path="create-hobbies-page" component={ CreateHobbiesPage }/>
     <Route path="create-likes-dislikes" component={ CreateLikesDislikes }/>
     <Route path="create-behaviours-page" component={ CreateBehavioursPage }/>
+    <Route path="create-medical-information" component={ CreateMedicalInformation }/>
     <Route path="login-page" component={ LoginPage }/>
   </Route>
 );
