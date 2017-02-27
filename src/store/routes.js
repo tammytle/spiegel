@@ -1,7 +1,6 @@
 import React from 'react';
-import { IndexRoute, Route } from 'react-router';
+import { IndexRedirect, Route } from 'react-router';
 import App from '../containers/app';
-import AboutPage from '../containers/about-page';
 import CounterPage from '../containers/counter-page';
 import DashboardPage from '../containers/dashboard';
 import CreateBasicInfoPage from '../containers/create-basic-info';
@@ -14,14 +13,16 @@ import CreateLikesDislikes from '../containers/create-likes-dislikes';
 import CreateBehavioursPage from '../containers/create-behaviours-page';
 import CreateMedicalInformation from '../containers/create-medical-information';
 import LoginPage from '../containers/login-page';
+import careProfilePage from '../containers/careProfile';
 
 
 export default (
   <Route path="/" component={ App }>
-    <IndexRoute component={ DashboardPage }/>
-    <Route path="about" component={ AboutPage }/>
+    <IndexRedirect to="dashboard"/>
     <Route path="counter" component={ CounterPage }/>
     <Route path="dashboard" component={ DashboardPage }/>
+    <Route path="login-page" component={ LoginPage }/>
+    <Route path="care-profile/:profileId" component={ careProfilePage }/>
     <Route path="create-basic-info" component={ CreateBasicInfoPage }/>
     <Route path="create-life-story" component={ CreateLifeStoryPage }/>
     <Route path="create-routine-page" component={ CreateRoutinePage }/>
@@ -31,6 +32,5 @@ export default (
     <Route path="create-likes-dislikes" component={ CreateLikesDislikes }/>
     <Route path="create-behaviours-page" component={ CreateBehavioursPage }/>
     <Route path="create-medical-information" component={ CreateMedicalInformation }/>
-    <Route path="login-page" component={ LoginPage }/>
   </Route>
 );

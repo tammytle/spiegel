@@ -4,33 +4,44 @@ import { push } from 'react-router-redux';
 import { logout } from '../actions/session';
 import LoginPage from '../containers/login-page';
 
-function App({children, goToDashboardPage, goToCreateBasicInfoPage, goToCreateLifeStoryPage, goToCreateRoutinePage, goToCreateMealTimePage, goToCreateDailyLivingPage, goToCreateHobbiesPage, goToCreateLikesDislikes, goToCreateBehavioursPage, goToMedicalInformation, logoutAction, isLoggedin}) {
+function App({children, location, goToDashboardPage, goToCreateBasicInfoPage, goToCreateLifeStoryPage, goToCreateRoutinePage, goToCreateMealTimePage, goToCreateDailyLivingPage, goToCreateHobbiesPage, goToCreateLikesDislikes, goToCreateBehavioursPage, goToMedicalInformation, logoutAction, isLoggedin}) {
+  const currentLocation = location.pathname;
+  const doNotShowNav = ['/dashboard', '/care-profile', '/login'];
   return (
-
     <div>
       <div className="row">
         <div className="large-12 columns">
-          <div className="button-group">
-            {isLoggedin ? <a className="button" onClick={goToDashboardPage}>Dashboard</a> : null}
-            {isLoggedin ? <a className="button" onClick={goToCreateBasicInfoPage}>Basic Information</a> : null}
-            {isLoggedin ? <a className="button" onClick={goToMedicalInformation}>Medical Information</a> : null}
-            {isLoggedin ? <a className="button" onClick={goToCreateLifeStoryPage}>Life Story</a> : null}
-            {isLoggedin ? <a className="button" onClick={goToCreateRoutinePage}>Routine</a> : null}
-            {isLoggedin ? <a className="button" onClick={goToCreateMealTimePage}>Meal Time</a> : null}
-            {isLoggedin ? <a className="button" onClick={goToCreateDailyLivingPage}>Daily Living</a> : null}
-            {isLoggedin ? <a className="button" onClick={goToCreateHobbiesPage}>Hobbies</a> : null}
-            {isLoggedin ? <a className="button" onClick={goToCreateLikesDislikes}>Likes & Dislikes</a> : null}
-            {isLoggedin ? <a className="button" onClick={goToCreateBehavioursPage}>Behaviours</a> : null}
-            {isLoggedin ? <a className="button secondary" onClick={logoutAction}>Logout</a> : null}
+          <div className="large-8 large-offset-2 columns">
+            { isLoggedin ? children : <LoginPage/> }
+          </div>
+          <div className="large-2 columns">
+            {
+              isLoggedin && !doNotShowNav.find((item) => currentLocation.indexOf(item) !== -1) ?
+              <div className="button-group">
+                <a className="button" style={{ width: '100%' }} onClick={goToDashboardPage}>Dashboard</a>
+                <a className="button" style={{ width: '100%' }} onClick={goToCreateBasicInfoPage}>Basic Information</a>
+                <a className="button" style={{ width: '100%' }} onClick={goToMedicalInformation}>Medical</a>
+                <a className="button" style={{ width: '100%' }} onClick={goToCreateLifeStoryPage}>Life Story</a>
+                <a className="button" style={{ width: '100%' }} onClick={goToCreateRoutinePage}>Routine</a>
+                <a className="button" style={{ width: '100%' }} onClick={goToCreateMealTimePage}>Meal Time</a>
+                <a className="button" style={{ width: '100%' }} onClick={goToCreateDailyLivingPage}>Daily Living</a>
+                <a className="button" style={{ width: '100%' }} onClick={goToCreateHobbiesPage}>Hobbies</a>
+                <a className="button" style={{ width: '100%' }} onClick={goToCreateLikesDislikes}>Likes & Dislikes</a>
+                <a className="button" style={{ width: '100%' }} onClick={goToCreateBehavioursPage}>Behaviours</a>
+                <a className="button secondary" style={{ width: '100%' }} onClick={logoutAction}>Logout</a>
+              </div>
+              :
+              null
+            }
           </div>
         </div>
       </div>
-      { isLoggedin ? children : <LoginPage/> }
     </div>
   );
 }
 
 App.propTypes = {
+  location: React.PropTypes.object,
   children: React.PropTypes.node,
   goToDashboardPage: React.PropTypes.func,
   goToCreateBasicInfoPage: React.PropTypes.func,

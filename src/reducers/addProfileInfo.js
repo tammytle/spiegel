@@ -6,6 +6,8 @@ import { ADD_DAILY_LIVING } from '../constants';
 import { ADD_HOBBIES_INFO } from '../constants';
 import { ADD_MEDICAL_INFO, NEW_PROFILE_SAVE_CARE_PREFERENCES } from '../constants';
 import { NEW_PROFILE_RESET_CARE_PREFERENCES } from '../constants';
+import { ADD_LIKES_AND_DISLIKES } from '../constants';
+import { ADD_BEHAVIOURS } from '../constants';
 import { fromJS } from 'immutable';
 
 const INITIAL_STATE = fromJS({
@@ -65,6 +67,26 @@ const INITIAL_STATE = fromJS({
   hobbies: {
     nameOfHobby: null,
     descriptionOfHobby: null
+  },
+  likesAndDislikes: {
+    physicallyComfortable: null,
+    happy: null,
+    thingsIDislike: null,
+    thingsThatScareMe: null,
+    whatComfortsMe: null,
+    conversationStarters: null
+  },
+  behaviours: {
+    safetyPrecautions: null,
+    upsetWhenReturningHome: null,
+    restlessnessSafety: null,
+    restlessnessResettle: null,
+    angerDuringActivities: null,
+    angerTriggers: null,
+    angerTips: null,
+    repeitionResponses: null,
+    additionalInfo: null,
+    communication: null
   }
 });
 
@@ -91,6 +113,12 @@ function createInfoReducer(state = INITIAL_STATE, action = {}) {
 
   case ADD_HOBBIES_INFO:
     return state.set('hobbies', fromJS(action.payload));
+
+  case ADD_LIKES_AND_DISLIKES:
+    return state.set('likesAndDislikes', fromJS(action.payload));
+
+  case ADD_BEHAVIOURS:
+    return state.set('behaviours', fromJS(action.payload));
 
   case NEW_PROFILE_SAVE_CARE_PREFERENCES:
     return state.set('carePreferences', fromJS(action.payload));

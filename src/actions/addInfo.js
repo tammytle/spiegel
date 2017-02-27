@@ -5,6 +5,8 @@ import { ADD_ROUTINE_INFO } from '../constants';
 import { ADD_MEAL_TIME } from '../constants';
 import { ADD_DAILY_LIVING } from '../constants';
 import { ADD_HOBBIES_INFO } from '../constants';
+import { ADD_LIKES_AND_DISLIKES } from '../constants';
+import { ADD_BEHAVIOURS } from '../constants';
 
 export function inputbasicinfo(basicinfo) {
   return {
@@ -52,5 +54,20 @@ export function inputHobbies(hobbies) {
   return {
   	type: ADD_HOBBIES_INFO,
   	payload: hobbies
+  };
+}
+
+export function inputLikesAndDislikes(likesAndDislikes) {
+  return {
+    type: ADD_LIKES_AND_DISLIKES,
+    payload: likesAndDislikes
+  };
+}
+
+
+export function inputBehaviours(behaviours) {
+  return {
+    type: ADD_BEHAVIOURS,
+    payload: behaviours
   };
 }

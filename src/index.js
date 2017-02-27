@@ -13,6 +13,7 @@ import configureStore from './store/configure-store';
 
 import './styles/index.pcss';
 import './styles/foundation.css';
+import './styles/style.css';
 
 const store = configureStore({});
 const history = syncHistoryWithStore(browserHistory, store);

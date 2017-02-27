@@ -10,16 +10,23 @@ class DashboardPage extends Component {
 
   render() {
     return (
-      <div className="row">
-        <div className="large-12 columns">
-          <h1 className="caps">Dashboard</h1>
-          <p>
-            <button className="button" onClick={ () => { this.props.resetProfile(); this.props.goToCreateBasicInfoPage(); }}>Create a Care Profile</button>
-          </p>
+      <div>
+        <div className="row">
+          <div className="large-12 columns">
+            <div className="large-6 columns no-pad-left">
+              <h4 className="caps">Care Profiles</h4>
+            </div>
+            <div className="large-6 columns text-right">
+              <button className="button" onClick={ () => { this.props.resetProfile(); this.props.goToCreateBasicInfoPage(); }}>Create a Care Profile</button>
+            </div>
+          </div>
+        </div>
+        <div className="row">
+          <div className="large-12 columns">
             { this.props.careProfiles.map( (profile, idx) => {
-              return <div key={`care_profile_${idx}`}>hello {profile.getIn(['basicInfo', 'firstName'])}</div>;
+              return <button className="button success" onClick={this.props.goToCareProfile(idx)} key={`care_profile_${idx}`}>{profile.getIn(['basicInfo', 'firstName'])} {profile.getIn(['basicInfo', 'lastName'])}</button>;
             }) }
-
+          </div>
         </div>
       </div>
     );
@@ -28,6 +35,7 @@ class DashboardPage extends Component {
 
 DashboardPage.propTypes = {
   goToCreateBasicInfoPage: PropTypes.func,
+  goToCareProfile: PropTypes.func,
   resetProfile: PropTypes.func,
   careProfiles: PropTypes.object
 };
@@ -35,7 +43,8 @@ DashboardPage.propTypes = {
 function mapDispatchToProps(dispatch) {
   return {
     resetProfile: () => dispatch(resetProfile()),
-    goToCreateBasicInfoPage: () => dispatch(push('/create-basic-info'))
+    goToCreateBasicInfoPage: () => dispatch(push('/create-basic-info')),
+    goToCareProfile: (id) => () => dispatch(push(`/care-profile/${id}`))
   };
 }
 
