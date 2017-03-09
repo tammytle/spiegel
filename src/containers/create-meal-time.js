@@ -2,6 +2,7 @@ import React, { PropTypes, Component } from 'react';
 import { connect } from 'react-redux';
 import { push } from 'react-router-redux';
 import {inputMealInfo} from '../actions/addInfo';
+import CreateProfileNav from '../components/createProfileNav';
 
 class CreateMealTimePage extends Component {
   constructor(props) {
@@ -22,63 +23,64 @@ class CreateMealTimePage extends Component {
   }
   render() {
     return (
-      <div>
+    <div className="card" style={{ paddingTop: '50px' }} >
+      <div className="large-offset-1 large-7 columns">
         <div className="row">
           <div className="large-12 columns">
             <h3 className="caps">Meal Time</h3>
           </div>
         </div>
         <div className="row">
-            <div className="large-8 columns end">
+            <div className="large-12 columns end">
               <label>Breakfast
                 <textarea value={this.state.breakfast} onChange={(e) => this.updateState('breakfast')(e)}/>
               </label>
             </div>
         </div>
         <div className="row">
-            <div className="large-8 columns end">
+            <div className="large-12 columns end">
               <label>Lunch
                 <textarea value={this.state.lunch} onChange={(e) => this.updateState('lunch')(e)}/>
               </label>
             </div>
         </div>
         <div className="row">
-            <div className="large-8 columns end">
+            <div className="large-12 columns end">
               <label>Dinner
                 <textarea value={this.state.dinner} onChange={(e) => this.updateState('dinner')(e)}/>
               </label>
             </div>
         </div>
         <div className="row">
-            <div className="large-8 columns end">
+            <div className="large-12 columns end">
               <label>Snacks
                 <textarea value={this.state.snacks} onChange={(e) => this.updateState('snacks')(e)}/>
               </label>
             </div>
         </div>
         <div className="row">
-            <div className="large-8 columns end">
+            <div className="large-12 columns end">
               <label>Any dietary restrictions?
                 <textarea value={this.state.dietaryRestrictions} onChange={(e) => this.updateState('dietaryRestrictions')(e)}/>
               </label>
             </div>
         </div>
         <div className="row">
-            <div className="large-8 columns end">
+            <div className="large-12 columns end">
               <label>Any particular likes or dislikes?
                 <textarea value={this.state.likesOrDislikes} onChange={(e) => this.updateState('likesOrDislikes')(e)}/>
               </label>
             </div>
         </div>
         <div className="row">
-            <div className="large-8 columns end">
+            <div className="large-12 columns end">
               <label>Use of Cutlery
                 <textarea value={this.state.useOfCutlery} onChange={(e) => this.updateState('useOfCutlery')(e)}/>
               </label>
             </div>
         </div>
         <div className="row">
-            <div className="large-8 columns end">
+            <div className="large-12 columns end">
               <label>Meal Set Up
                 <textarea value={this.state.mealSetUp} onChange={(e) => this.updateState('mealSetUp')(e)}/>
               </label>
@@ -90,6 +92,10 @@ class CreateMealTimePage extends Component {
           </div>
         </div>
       </div>
+      <div className="large-2 large-offset-1 columns end">
+        <CreateProfileNav/>
+      </div>
+    </div>
     );
   }
   updateState(propertyName) {

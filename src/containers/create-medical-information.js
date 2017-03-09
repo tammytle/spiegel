@@ -2,6 +2,7 @@ import React, { PropTypes, Component } from 'react';
 import { connect } from 'react-redux';
 import { push } from 'react-router-redux';
 import {inputmedicalinfo} from '../actions/addInfo';
+import CreateProfileNav from '../components/createProfileNav';
 
 class CreateMedicalInformation extends Component {
   constructor(props) {
@@ -19,42 +20,43 @@ class CreateMedicalInformation extends Component {
   }
   render() {
     return (
-      <div>
+    <div className="card" style={{ paddingTop: '50px' }}>
+      <div className="large-offset-1 columns large-7 columns">
         <div className="row">
           <div className="large-12 columns">
             <h3 className="caps">Medical Information</h3>
           </div>
         </div>
         <div className="row">
-            <div className="large-8 columns end">
+            <div className="large-12 columns end">
               <label>Medical Conditions (other than dementia)
                 <textarea value={this.state.medicalConditions} onChange={(e) => this.updateState('medicalConditions')(e)}/>
               </label>
             </div>
         </div>
         <div className="row">
-            <div className="large-8 columns end">
+            <div className="large-12 columns end">
               <label>Allergies
                 <textarea value={this.state.allergies} onChange={(e) => this.updateState('allergies')(e)}/>
               </label>
             </div>
         </div>
         <div className="row">
-            <div className="large-8 columns end">
+            <div className="large-12 columns end">
               <label>Hearing
                 <textarea value={this.state.hearing} onChange={(e) => this.updateState('hearing')(e)}/>
               </label>
             </div>
         </div>
         <div className="row">
-            <div className="large-8 columns end">
+            <div className="large-12 columns end">
               <label>Vision
                 <textarea value={this.state.vision} onChange={(e) => this.updateState('vision')(e)}/>
               </label>
             </div>
         </div>
         <div className="row">
-            <div className="large-8 columns end">
+            <div className="large-12 columns end">
               <label>Mobility
                 <textarea value={this.state.mobility} onChange={(e) => this.updateState('mobility')(e)}/>
               </label>
@@ -66,6 +68,10 @@ class CreateMedicalInformation extends Component {
           </div>
         </div>
       </div>
+      <div className="large-2 large-offset-1 columns end">
+        <CreateProfileNav/>
+      </div>
+    </div>
     );
   }
 

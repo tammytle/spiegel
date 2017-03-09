@@ -2,6 +2,7 @@ import React, { PropTypes, Component } from 'react';
 import { connect } from 'react-redux';
 import { push } from 'react-router-redux';
 import {inputLifeStory} from '../actions/addInfo';
+import CreateProfileNav from '../components/createProfileNav';
 
 class CreateLifeStory extends Component {
   constructor(props) {
@@ -15,16 +16,17 @@ class CreateLifeStory extends Component {
   }
   render() {
     return (
-      <div>
+    <div className="card" style={{ paddingTop: '50px' }} >
+      <div className="large-offset-1 large-7 columns">
         <div className="row">
           <div className="large-12 columns">
             <h3 className="caps">Life Story</h3>
           </div>
         </div>
         <div className="row">
-            <div className="large-8 columns end">
+            <div className="large-12 columns end">
               <label>Story
-                <textarea value={this.state.story} onChange={(e) => this.updateState('story')(e)}/>
+                <textarea rows={4} value={this.state.story} onChange={(e) => this.updateState('story')(e)}/>
               </label>
             </div>
         </div>
@@ -34,6 +36,10 @@ class CreateLifeStory extends Component {
           </div>
         </div>
       </div>
+      <div className="large-2 large-offset-1 columns end">
+        <CreateProfileNav/>
+      </div>
+    </div>
     );
   }
   updateState(propertyName) {

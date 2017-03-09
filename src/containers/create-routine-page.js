@@ -2,6 +2,7 @@ import React, { PropTypes, Component } from 'react';
 import { connect } from 'react-redux';
 import { push } from 'react-router-redux';
 import {inputRoutine} from '../actions/addInfo';
+import CreateProfileNav from '../components/createProfileNav';
 
 class CreateRoutinePage extends Component {
   constructor(props) {
@@ -18,37 +19,38 @@ class CreateRoutinePage extends Component {
   }
   render() {
     return (
-      <div>
+    <div className="card" style={{ paddingTop: '50px' }} >
+      <div className="large-offset-1 large-7 columns">
         <div className="row">
           <div className="large-12 columns">
             <h3 className="caps">Routine</h3>
           </div>
         </div>
         <div className="row">
-            <div className="large-8 columns end">
+            <div className="large-12 columns end">
               <label>Morning
-                <textarea value={this.state.morning} onChange={(e) => this.updateState('morning')(e)}/>
+                <textarea rows={4} value={this.state.morning} onChange={(e) => this.updateState('morning')(e)}/>
               </label>
             </div>
         </div>
         <div className="row">
-            <div className="large-8 columns end">
+            <div className="large-12 columns end">
               <label>Afternoon
-                <textarea value={this.state.afternoon} onChange={(e) => this.updateState('afternoon')(e)}/>
+                <textarea rows={4} value={this.state.afternoon} onChange={(e) => this.updateState('afternoon')(e)}/>
               </label>
             </div>
         </div>
         <div className="row">
-            <div className="large-8 columns end">
+            <div className="large-12 columns end">
               <label>Evening
-                <textarea value={this.state.evening} onChange={(e) => this.updateState('evening')(e)}/>
+                <textarea rows={4} value={this.state.evening} onChange={(e) => this.updateState('evening')(e)}/>
               </label>
             </div>
         </div>
         <div className="row">
-            <div className="large-8 columns end">
+            <div className="large-12 columns end">
               <label>Night
-                <textarea value={this.state.night} onChange={(e) => this.updateState('night')(e)}/>
+                <textarea rows={4} value={this.state.night} onChange={(e) => this.updateState('night')(e)}/>
               </label>
             </div>
         </div>
@@ -58,6 +60,10 @@ class CreateRoutinePage extends Component {
           </div>
         </div>
       </div>
+      <div className="large-2 large-offset-1 columns end">
+        <CreateProfileNav/>
+      </div>
+    </div>
     );
   }
   updateState(propertyName) {

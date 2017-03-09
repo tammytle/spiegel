@@ -2,6 +2,7 @@ import React, { PropTypes, Component } from 'react';
 import { connect } from 'react-redux';
 import { push } from 'react-router-redux';
 import {inputbasicinfo} from '../actions/addInfo';
+import CreateProfileNav from '../components/createProfileNav';
 
 // function CreateBasicInfoPage() {
 class CreateBasicInfoPage extends Component {
@@ -19,137 +20,175 @@ class CreateBasicInfoPage extends Component {
         maritalStatusSince: '',
         describeRelationship: '',
         pastRelationships: '',
-        significantPeopleFirstName: '',
-        significantPeopleLastName: '',
-        significantPeopleRelationship: '',
-        significantPeoplePhoneNumber: '',
-        significantPeopleEmail: '',
-        pets: ''
+        pets: '',
+        significantPeople: [createSignificantPerson()]
       }
     };
   }
   render() {
     return (
-    // function CreateBasicInfoPage() {
-      <div>
-        <div className="row">
-          <div className="large-12 columns">
-            <h3 className="caps">Basic Information</h3>
+    <div>
+      <div className="card" style={{ paddingTop: '50px' }} >
+        <div className="large-offset-1 large-7 columns">
+          <div className="row">
+            <div className="large-12 columns">
+              <h3 className="caps">Basic Information</h3>
+            </div>
           </div>
-        </div>
-        <div className="row">
-            <div className="large-4 columns">
-              <label>First Name
-                <input type="text" value={this.state.firstName} onChange={(e) => this.updateState('firstName')(e)}/>
-              </label>
-            </div>
-            <div className="large-4 columns end">
-              <label>Last Name
-                <input type="text" value={this.state.lastName} onChange={(e) => this.updateState('lastName')(e)}/>
-              </label>
-            </div>
-        </div>
-        <div className="row">
-            <div className="large-4 columns">
-              <label>Names they like to be addressed by
-                <input type="text" value={this.state.nickName} onChange={(e) => this.updateState('nickName')(e)}/>
-              </label>
-            </div>
-            <div className="large-4 columns end">
-              <label>Date of Birth
-                <input type="text" value={this.state.doB} onChange={(e) => this.updateState('doB')(e)}/>
-              </label>
-            </div>
-        </div>
-        <div className="row">
-          <div className="large-12 columns">
-            <br/><h5>Relationships</h5>
+          <div className="row">
+              <div className="large-6 columns">
+                <label>First Name
+                  <input type="text" value={this.state.firstName} onChange={(e) => this.updateState('firstName')(e)}/>
+                </label>
+              </div>
+              <div className="large-6 columns end">
+                <label>Last Name
+                  <input type="text" value={this.state.lastName} onChange={(e) => this.updateState('lastName')(e)}/>
+                </label>
+              </div>
           </div>
-        </div>
-        <div className="row">
-            <div className="large-3 columns">
-              <label>Marital Status
-                  <select onChange={(e) => this.updateState('maritalStatus')(e)}>
-                    <option value="Single">Single</option>
-                    <option value="Married">Married</option>
-                    <option value="Divorced">Divorced</option>
-                    <option value="Widowed">Widowed</option>
-                  </select>
-              </label>
-            </div>
-            <div className="large-3 columns">
-              <label>With (if applicable)
-                <input type="text" value={this.state.maritalStatusWith} onChange={(e) => this.updateState('maritalStatusWith')(e)}/>
-              </label>
-            </div>
-            <div className="large-2 columns end">
-              <label>Since (if applicable)
-                <input type="text" value={this.state.maritalStatusSince} onChange={(e) => this.updateState('maritalStatusSince')(e)}/>
-              </label>
-            </div>
-        </div>
-        <div className="row">
-            <div className="large-8 columns end">
-              <label>Describe this relationship
-                <textarea value={this.state.describeRelationship} onChange={(e) => this.updateState('describeRelationship')(e)}/>
-              </label>
-            </div>
-        </div>
-        <div className="row">
-            <div className="large-8 columns end">
-              <label>Significant past relationships
-                <textarea value={this.state.pastRelationships} onChange={(e) => this.updateState('pastRelationships')(e)}/>
-              </label>
-            </div>
-        </div>
-        <div className="row">
-          <div className="large-12 columns">
-            <br/><h5>Significant people in my life (family, children, etc.)</h5>
+          <div className="row">
+              <div className="large-6 columns">
+                <label>Names they like to be addressed by
+                  <input type="text" value={this.state.nickName} onChange={(e) => this.updateState('nickName')(e)}/>
+                </label>
+              </div>
+              <div className="large-6 columns end">
+                <label>Date of Birth
+                  <input type="text" value={this.state.doB} onChange={(e) => this.updateState('doB')(e)}/>
+                </label>
+              </div>
           </div>
-        </div>
-        <div className="row">
-            <div className="large-4 columns">
-              <label>First name
-                <input type="text" value={this.state.significantPeopleFirstName} onChange={(e) => this.updateState('significantPeopleFirstName')(e)}/>
-              </label>
+          <div className="row">
+            <div className="large-12 columns">
+              <br/><h5>Relationships</h5>
             </div>
-            <div className="large-4 columns end">
-              <label>Last Name
-                <input type="text" value={this.state.significantPeopleLastName} onChange={(e) => this.updateState('significantPeopleLastName')(e)}/>
-              </label>
+          </div>
+          <div className="row">
+              <div className="large-4 columns">
+                <label>Marital Status
+                    <select onChange={(e) => this.updateState('maritalStatus')(e)}>
+                      <option value="Single">Single</option>
+                      <option value="Married">Married</option>
+                      <option value="Divorced">Divorced</option>
+                      <option value="Widowed">Widowed</option>
+                    </select>
+                </label>
+              </div>
+              <div className="large-4 columns">
+                <label>With (if applicable)
+                  <input type="text" value={this.state.maritalStatusWith} onChange={(e) => this.updateState('maritalStatusWith')(e)}/>
+                </label>
+              </div>
+              <div className="large-4 columns end">
+                <label>Since (if applicable)
+                  <input type="text" value={this.state.maritalStatusSince} onChange={(e) => this.updateState('maritalStatusSince')(e)}/>
+                </label>
+              </div>
+          </div>
+          <div className="row">
+              <div className="large-12 columns end">
+                <label>Describe this relationship
+                  <textarea value={this.state.describeRelationship} onChange={(e) => this.updateState('describeRelationship')(e)}/>
+                </label>
+              </div>
+          </div>
+          <div className="row">
+              <div className="large-12 columns end">
+                <label>Significant past relationships
+                  <textarea value={this.state.pastRelationships} onChange={(e) => this.updateState('pastRelationships')(e)}/>
+                </label>
+              </div>
+          </div>
+          <div className="row">
+            <div className="large-12 columns">
+              <br/><h5>Significant people in my life (family, children, etc.)</h5>
             </div>
-        </div>
-        <div className="row">
-          <div className="large-3 columns">
-            <label>Relationship
-              <input type="text" value={this.state.significantPeopleRelationship} onChange={(e) => this.updateState('significantPeopleRelationship')(e)}/>
-            </label>
           </div>
-          <div className="large-2 columns">
-            <label>Phone #
-              <input type="text" value={this.state.significantPeoplePhoneNumber} onChange={(e) => this.updateState('significantPeoplePhoneNumber')(e)}/>
-            </label>
+          {
+            this.state.basicInfo.significantPeople.map((person, idx) => (
+            <div key={`significant_person_${idx}`} style={{backgroundColor: '#F9F9F9', padding: '25px'}}>
+              <div className="row">
+                  <div className="large-6 columns no-pad-right">
+                    <label>First name
+                      <input type="text" value={person.significantPeopleFirstName} onChange={(e) => this.updateSignificantPerson(idx, 'significantPeopleFirstName')(e)}/>
+                    </label>
+                  </div>
+                  <div className="large-6 columns end">
+                    <label>Last Name
+                      <input type="text" value={person.significantPeopleLastName} onChange={(e) => this.updateSignificantPerson(idx, 'significantPeopleLastName')(e)}/>
+                    </label>
+                  </div>
+              </div>
+              <div className="row">
+                <div className="large-4 columns no-pad-right">
+                  <label>Relationship
+                    <input type="text" value={person.significantPeopleRelationship} onChange={(e) => this.updateSignificantPerson(idx, 'significantPeopleRelationship')(e)}/>
+                  </label>
+                </div>
+                <div className="large-4 columns no-pad-right">
+                  <label>Phone #
+                    <input type="text" value={person.significantPeoplePhoneNumber} onChange={(e) => this.updateSignificantPerson(idx, 'significantPeoplePhoneNumber')(e)}/>
+                  </label>
+                </div>
+                <div className="large-4 columns end">
+                  <label>Email
+                    <input type="text" value={person.significantPeopleEmail} onChange={(e) => this.updateSignificantPerson(idx, 'significantPeopleEmail')(e)}/>
+                  </label>
+                </div>
+              </div>
+            </div>
+            ))
+          }
+
+          <div className="row">
+            <div className="large-12 columns end">
+              <a className="button" style={{ width: '100%' }} onClick={ () => this.addPerson() }>Add Another</a>
+            </div>
           </div>
-          <div className="large-3 columns end">
-            <label>Email
-              <input type="text" value={this.state.significantPeopleEmail} onChange={(e) => this.updateState('significantPeopleEmail')(e)}/>
-            </label>
-          </div>
-        </div>
-        <div className="row">
-            <div className="large-8 columns end">
+          <div className="row">
+            <div className="large-12 columns end">
               <label>Pets
                 <textarea value={this.state.pets} onChange={(e) => this.updateState('pets')(e)}/>
               </label>
             </div>
-        </div>
-        <div className="row">
-          <div className="large-12 columns">
-            <button className="button" onClick={ () => { this.props.inputbasicinfo(this.state.basicInfo); this.props.goToMedicalInformation(); }}>Continue</button>
+          </div>
+          <div className="row">
+            <div className="large-12 columns">
+              <button className="button" onClick={ () => { this.props.inputbasicinfo(this.state.basicInfo); this.props.goToMedicalInformation(); }}>Continue</button>
+            </div>
           </div>
         </div>
+        <div className="large-2 large-offset-1 columns end">
+          <CreateProfileNav/>
+        </div>
       </div>
+    </div>
     );
+  }
+
+  addPerson() {
+    const basicInfo = this.state.basicInfo;
+    basicInfo.significantPeople = basicInfo.significantPeople.concat([createSignificantPerson()]);
+
+    this.setState(
+      {
+        basicInfo: basicInfo
+      }
+    );
+  }
+
+  updateSignificantPerson(idx, property) {
+    return (e) => {
+      const basicInfo = this.state.basicInfo;
+      basicInfo.significantPeople[idx][property] = e.target.value;
+
+      this.setState({
+        basicInfo: basicInfo
+      });
+
+      return true;
+    };
   }
 
   updateState(propertyName) {
@@ -168,13 +207,24 @@ class CreateBasicInfoPage extends Component {
 
 CreateBasicInfoPage.propTypes = {
   inputbasicinfo: PropTypes.func,
-  goToMedicalInformation: React.PropTypes.func
+  goToMedicalInformation: React.PropTypes.func,
+  isLoggedin: React.PropTypes.bool,
 };
 
 function mapDispatchToProps(dispatch) {
   return {
     inputbasicinfo: (basicinfo) => dispatch(inputbasicinfo(basicinfo)),
     goToMedicalInformation: () => dispatch(push('/create-medical-information'))
+  };
+}
+
+function createSignificantPerson() {
+  return {
+    significantPeopleFirstName: '',
+    significantPeopleLastName: '',
+    significantPeopleRelationship: '',
+    significantPeoplePhoneNumber: '',
+    significantPeopleEmail: '',
   };
 }
 

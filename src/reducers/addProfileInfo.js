@@ -21,11 +21,7 @@ const INITIAL_STATE = fromJS({
     maritalStatusSince: null,
     describeRelationship: null,
     pastRelationships: null,
-    significantPeopleFirstName: null,
-    significantPeopleLastName: null,
-    significantPeopleRelationship: null,
-    significantPeoplePhoneNumber: null,
-    significantPeopleEmail: null,
+    significantPeople: [null],
     pets: null
   },
   medicalInfo: {
@@ -65,8 +61,7 @@ const INITIAL_STATE = fromJS({
     clothingPreferences: null
   },
   hobbies: {
-    nameOfHobby: null,
-    descriptionOfHobby: null
+    personalHobbies: [null]
   },
   likesAndDislikes: {
     physicallyComfortable: null,

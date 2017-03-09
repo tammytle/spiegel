@@ -7,3 +7,63 @@
   padding-right: 0;
   margin-right: 0;
 }
+
+.break {
+	padding: 2%;
+}
+
+body {
+	background-color: #F9F9F9;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+}
+
+button {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+}
+
+select {
+  font-weight: 300;
+}
+
+label {
+  font-weight: 300;
+}
+
+[type='text'] {
+  font-weight: 300;
+}
+
+.card {
+  background-color: #ffffff;
+  border: 1px solid #EAEAEA;
+  padding: 25px;
+}
+
+.careProfileCard {
+  padding-top: 25px;
+  width: 275px;
+  height: 300px;
+  background-color: #ffffff;
+  border: 1px solid #EAEAEA;
+  text-align: center;
+  position: relative;
+  cursor: pointer;
+}
+
+.cardProfileCardView {
+  cursor: pointer;
+  background: #F7F7F7;
+  width: 273px;
+  height: 40px;
+  text-align: center;
+  bottom: 0;
+  padding: 5px;
+  position: absolute;
+}

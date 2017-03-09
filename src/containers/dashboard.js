@@ -16,17 +16,15 @@ class DashboardPage extends Component {
             <div className="large-6 columns no-pad-left">
               <h4 className="caps">Care Profiles</h4>
             </div>
-            <div className="large-6 columns text-right">
+            <div className="large-6 columns text-right no-pad-right">
               <button className="button" onClick={ () => { this.props.resetProfile(); this.props.goToCreateBasicInfoPage(); }}>Create a Care Profile</button>
             </div>
           </div>
         </div>
         <div className="row">
-          <div className="large-12 columns">
             { this.props.careProfiles.map( (profile, idx) => {
-              return <button className="button success" onClick={this.props.goToCareProfile(idx)} key={`care_profile_${idx}`}>{profile.getIn(['basicInfo', 'firstName'])} {profile.getIn(['basicInfo', 'lastName'])}</button>;
+              return <div className="large-3 columns end"><div className="careProfileCard" onClick={this.props.goToCareProfile(idx)} key={`care_profile_${idx}`}><img src={'http://placehold.it/150x150'}/><br/><br/><h5>{profile.getIn(['basicInfo', 'firstName'])} {profile.getIn(['basicInfo', 'lastName'])}</h5><div className="cardProfileCardView">View</div></div></div>;
             }) }
-          </div>
         </div>
       </div>
     );
