@@ -23,8 +23,9 @@ class CreateMealTimePage extends Component {
   }
   render() {
     return (
-    <div className="card" style={{ paddingTop: '50px' }} >
-      <div className="large-offset-1 large-7 columns">
+    <div className="">
+      <div className="large-8 large-offset-1 columns">
+        <div className="card" style={{ paddingTop: '50px' }} >
         <div className="row">
           <div className="large-12 columns">
             <h3 className="caps">Meal Time</h3>
@@ -33,69 +34,70 @@ class CreateMealTimePage extends Component {
         <div className="row">
             <div className="large-12 columns end">
               <label>Breakfast
-                <textarea value={this.state.breakfast} onChange={(e) => this.updateState('breakfast')(e)}/>
+                <textarea rows={4} value={this.state.breakfast} onChange={(e) => this.updateState('breakfast')(e)}/>
               </label>
             </div>
         </div>
         <div className="row">
             <div className="large-12 columns end">
               <label>Lunch
-                <textarea value={this.state.lunch} onChange={(e) => this.updateState('lunch')(e)}/>
+                <textarea rows={4} value={this.state.lunch} onChange={(e) => this.updateState('lunch')(e)}/>
               </label>
             </div>
         </div>
         <div className="row">
             <div className="large-12 columns end">
               <label>Dinner
-                <textarea value={this.state.dinner} onChange={(e) => this.updateState('dinner')(e)}/>
+                <textarea rows={4} value={this.state.dinner} onChange={(e) => this.updateState('dinner')(e)}/>
               </label>
             </div>
         </div>
         <div className="row">
             <div className="large-12 columns end">
               <label>Snacks
-                <textarea value={this.state.snacks} onChange={(e) => this.updateState('snacks')(e)}/>
+                <textarea rows={4} value={this.state.snacks} onChange={(e) => this.updateState('snacks')(e)}/>
               </label>
             </div>
         </div>
         <div className="row">
             <div className="large-12 columns end">
               <label>Any dietary restrictions?
-                <textarea value={this.state.dietaryRestrictions} onChange={(e) => this.updateState('dietaryRestrictions')(e)}/>
+                <textarea rows={4} value={this.state.dietaryRestrictions} onChange={(e) => this.updateState('dietaryRestrictions')(e)}/>
               </label>
             </div>
         </div>
         <div className="row">
             <div className="large-12 columns end">
               <label>Any particular likes or dislikes?
-                <textarea value={this.state.likesOrDislikes} onChange={(e) => this.updateState('likesOrDislikes')(e)}/>
+                <textarea rows={4} value={this.state.likesOrDislikes} onChange={(e) => this.updateState('likesOrDislikes')(e)}/>
               </label>
             </div>
         </div>
         <div className="row">
             <div className="large-12 columns end">
               <label>Use of Cutlery
-                <textarea value={this.state.useOfCutlery} onChange={(e) => this.updateState('useOfCutlery')(e)}/>
+                <textarea rows={4} value={this.state.useOfCutlery} onChange={(e) => this.updateState('useOfCutlery')(e)}/>
               </label>
             </div>
         </div>
         <div className="row">
             <div className="large-12 columns end">
               <label>Meal Set Up
-                <textarea value={this.state.mealSetUp} onChange={(e) => this.updateState('mealSetUp')(e)}/>
+                <textarea rows={4} value={this.state.mealSetUp} onChange={(e) => this.updateState('mealSetUp')(e)}/>
               </label>
             </div>
         </div>
         <div className="row">
           <div className="large-12 columns">
-            <button className="button" onClick={ () => { this.props.goToCreateDailyLivingPage(); this.props.inputMealInfo(this.state.mealInfo); }}>Continue</button>
+            <br/><br/><button className="button bgGreen" style={{float: 'right'}} onClick={ () => { this.props.goToCreateDailyLivingPage(); this.props.inputMealInfo(this.state.mealInfo); }}>Continue</button>
           </div>
         </div>
+        </div>
+        </div>
+        <div className="large-2 columns createProfileSideNav end">
+          <CreateProfileNav/><br/><br/>
+        </div>
       </div>
-      <div className="large-2 large-offset-1 columns end">
-        <CreateProfileNav/>
-      </div>
-    </div>
     );
   }
   updateState(propertyName) {

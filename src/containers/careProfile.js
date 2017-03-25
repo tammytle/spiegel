@@ -1,12 +1,15 @@
 import React, { PropTypes, Component } from 'react';
 import { connect } from 'react-redux';
 
+import {updateProfileByPath} from '../actions/addInfo';
+
 class careProfilesPage extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      activeTab: 'routine'
+      activeTab: 'routine',
+      isEditMode: false
     };
   }
 
@@ -16,6 +19,9 @@ class careProfilesPage extends Component {
         <div className="large-12 columns">
           <div className="card" style={{paddingTop: '25px', paddingBottom: '0px'}}>
             <h4 className="caps">{this.props.profile.getIn(['basicInfo', 'firstName'])} {this.props.profile.getIn(['basicInfo', 'lastName'])}</h4>
+            {
+              this.state.isEditMode ? <button onClick={() => this.setState({isEditMode: false})}>Done</button> : <button onClick={() => this.setState({isEditMode: true})}>Edit</button>
+            }
             <div className="button-group expanded">
               <a className="button" style={{backgroundColor: this.state.activeTab === 'routine' ? '#14679e' : ''}}  onClick={() => this.setState({activeTab: 'routine'})}>Routine</a>
               <a className="button" style={{backgroundColor: this.state.activeTab === 'mealInfo' ? '#14679e' : ''}}  onClick={() => this.setState({activeTab: 'mealInfo'})}>Meal Info</a>
@@ -195,22 +201,53 @@ class careProfilesPage extends Component {
               <div className="row">
                 <div className="large-12 columns">
                   <div className="card">
-                    <p>What makes me physically comfortable: {this.props.profile.getIn(['likesAndDislikes', 'physicallyComfortable'])}</p>
+                    <p><span className="careProfileLabel">What makes me physically comfortable</span><br/>
+                    { this.state.isEditMode ?
+                        <input type="text" value={this.props.profile.getIn(['likesAndDislikes', 'physicallyComfortable'])} onChange={this.props.updateProfile([this.props.profileId, 'likesAndDislikes', 'physicallyComfortable'])}/>
+                        :
+                        this.props.profile.getIn(['likesAndDislikes', 'physicallyComfortable'])
+                    }</p>
                   </div>
                   <div className="card">
-                    <p>What makes me happy: {this.props.profile.getIn(['likesAndDislikes', 'happy'])}</p>
+                    <p><span className="careProfileLabel">What makes me happy</span><br/>
+                      { this.state.isEditMode ?
+                        <input type="text" value={this.props.profile.getIn(['likesAndDislikes', 'happy'])} onChange={this.props.updateProfile([this.props.profileId, 'likesAndDislikes', 'happy'])}/>
+                        :
+                        this.props.profile.getIn(['likesAndDislikes', 'happy'])
+                      }
+                    </p>
                   </div>
                   <div className="card">
-                    <p>Things I dislike: {this.props.profile.getIn(['likesAndDislikes', 'thingsIDislike'])}</p>
+                    <p><span className="careProfileLabel">Things I dislike</span><br/>
+                      { this.state.isEditMode ?
+                        <input type="text" value={this.props.profile.getIn(['likesAndDislikes', 'thingsIDislike'])} onChange={this.props.updateProfile([this.props.profileId, 'likesAndDislikes', 'thingsIDislike'])}/>
+                        :
+                        this.props.profile.getIn(['likesAndDislikes', 'thingsIDislike'])
+                      }</p>
                   </div>
                   <div className="card">
-                    <p>Things that scare me: {this.props.profile.getIn(['likesAndDislikes', 'thingsThatScareMe'])}</p>
+                    <p><span className="careProfileLabel">Things that scare me</span><br/>
+                      { this.state.isEditMode ?
+                        <input type="text" value={this.props.profile.getIn(['likesAndDislikes', 'thingsThatScareMe'])} onChange={this.props.updateProfile([this.props.profileId, 'likesAndDislikes', 'thingsThatScareMe'])}/>
+                        :
+                        this.props.profile.getIn(['likesAndDislikes', 'thingsThatScareMe'])
+                      }</p>
                   </div>
                   <div className="card">
-                    <p>What comforts me when I'm upset: {this.props.profile.getIn(['likesAndDislikes', 'whatComfortsMe'])}</p>
+                    <p><span className="careProfileLabel">What comforts me when I'm upset</span><br/>
+                      { this.state.isEditMode ?
+                        <input type="text" value={this.props.profile.getIn(['likesAndDislikes', 'whatComfortsMe'])} onChange={this.props.updateProfile([this.props.profileId, 'likesAndDislikes', 'whatComfortsMe'])}/>
+                        :
+                        this.props.profile.getIn(['likesAndDislikes', 'whatComfortsMe'])
+                      }</p>
                   </div>
                   <div className="card">
-                    <p>Conversation starters / topics of interest: {this.props.profile.getIn(['likesAndDislikes', 'conversationStarters'])}</p>
+                    <p><span className="careProfileLabel">Conversation starters / Topics of interest</span><br/>
+                      { this.state.isEditMode ?
+                        <input type="text" value={this.props.profile.getIn(['likesAndDislikes', 'conversationStarters'])} onChange={this.props.updateProfile([this.props.profileId, 'likesAndDislikes', 'conversationStarters'])}/>
+                        :
+                        this.props.profile.getIn(['likesAndDislikes', 'conversationStarters'])
+                      }</p>
                   </div>
                 </div>
               </div>
@@ -224,8 +261,18 @@ class careProfilesPage extends Component {
                 <div className="large-12 columns">
                   <div className="card">
                     <h5>Unsafe walking</h5>
-                      <p>What safety precautions should be used? {this.props.profile.getIn(['behaviours', 'safetyPrecautions'])}</p>
-                      <p>Do they become upset when returning home, and if so what comforts them? {this.props.profile.getIn(['behaviours', 'upsetWhenReturningHome'])}</p>
+                      <p><span className="careProfileLabel">What safety precautions should be used?</span><br/>
+                      { this.state.isEditMode ?
+                        <input type="text" value={this.props.profile.getIn(['behaviours', 'safetyPrecautions'])} onChange={this.props.updateProfile([this.props.profileId, 'behaviours', 'safetyPrecautions'])}/>
+                        :
+                        this.props.profile.getIn(['behaviours', 'safetyPrecautions'])
+                      }</p>
+                      <p><span className="careProfileLabel">Do they become upset when returning home, and if so what comforts them?</span><br/>
+                      { this.state.isEditMode ?
+                        <input type="text" value={this.props.profile.getIn(['behaviours', 'upsetWhenReturningHome'])} onChange={this.props.updateProfile([this.props.profileId, 'behaviours', 'upsetWhenReturningHome'])}/>
+                        :
+                        this.props.profile.getIn(['behaviours', 'upsetWhenReturningHome'])
+                      }</p>
                   </div>
                   <div className="card">
                     <h5>Restlessness</h5>
@@ -263,15 +310,20 @@ class careProfilesPage extends Component {
 }
 
 careProfilesPage.propTypes = {
-  profile: PropTypes.object
+  profile: PropTypes.object,
+  profileId: PropTypes.number,
+  updateProfile: PropTypes.function
 };
 
-function mapDispatchToProps() {
-  return {};
+function mapDispatchToProps(dispatch) {
+  return {
+    updateProfile: (path) => (value) => dispatch(updateProfileByPath(path, value.target.value))
+  };
 }
 
 function mapStateToProps(state, props) {
   return {
+    profileId: +props.params.profileId,
     profile: state.careProfiles.get(+props.params.profileId)
   };
 }

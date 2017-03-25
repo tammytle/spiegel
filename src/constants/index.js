@@ -24,3 +24,5 @@ export const NEW_PROFILE_RESET_CARE_PREFERENCES = 'App/NEW_PROFILE_RESET_CARE_PR
 export const CARE_PROFILE = 'App/CARE_PROFILE';
 
 export const FORM_RESET = 'redux-form/RESET';
+
+export const UPDATE_PROFILE = 'App/UPDATE_PROFILE';

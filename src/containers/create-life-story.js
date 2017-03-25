@@ -16,8 +16,9 @@ class CreateLifeStory extends Component {
   }
   render() {
     return (
-    <div className="card" style={{ paddingTop: '50px' }} >
-      <div className="large-offset-1 large-7 columns">
+    <div className="">
+      <div className="large-8 large-offset-1 columns">
+        <div className="card" style={{ paddingTop: '50px' }} >
         <div className="row">
           <div className="large-12 columns">
             <h3 className="caps">Life Story</h3>
@@ -26,20 +27,21 @@ class CreateLifeStory extends Component {
         <div className="row">
             <div className="large-12 columns end">
               <label>Story
-                <textarea rows={4} value={this.state.story} onChange={(e) => this.updateState('story')(e)}/>
+                <textarea rows={8} value={this.state.story} onChange={(e) => this.updateState('story')(e)}/>
               </label>
             </div>
         </div>
         <div className="row">
           <div className="large-12 columns">
-            <button className="button" onClick={ () => { this.props.goToCreateRoutinePage(); this.props.inputLifeStory(this.state.lifeStory); }}>Continue</button>
+            <br/><br/><button className="button bgGreen" style={{float: 'right'}} onClick={ () => { this.props.goToCreateRoutinePage(); this.props.inputLifeStory(this.state.lifeStory); }}>Continue</button>
           </div>
         </div>
+        </div>
+        </div>
+        <div className="large-2 columns createProfileSideNav end">
+          <CreateProfileNav/><br/><br/>
+        </div>
       </div>
-      <div className="large-2 large-offset-1 columns end">
-        <CreateProfileNav/>
-      </div>
-    </div>
     );
   }
   updateState(propertyName) {

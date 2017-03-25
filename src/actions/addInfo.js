@@ -7,6 +7,7 @@ import { ADD_DAILY_LIVING } from '../constants';
 import { ADD_HOBBIES_INFO } from '../constants';
 import { ADD_LIKES_AND_DISLIKES } from '../constants';
 import { ADD_BEHAVIOURS } from '../constants';
+import { UPDATE_PROFILE } from '../constants';
 
 export function inputbasicinfo(basicinfo) {
   return {
@@ -69,5 +70,12 @@ export function inputBehaviours(behaviours) {
   return {
     type: ADD_BEHAVIOURS,
     payload: behaviours
+  };
+}
+
+export function updateProfileByPath(path, value) {
+  return {
+    type: UPDATE_PROFILE,
+    payload: {path, value}
   };
 }

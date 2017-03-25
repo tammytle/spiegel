@@ -11,17 +11,17 @@ function App({children, logoutAction, isLoggedin, goToDashboardPage}) {
     <div>
     { isLoggedin ?
       <div className="top-bar" style={{ marginBottom: '25px' }}>
-        <div className="row">
-          <div className="large-12 columns no-pad-left">
+        <div>
+          <div className="large-12 columns no-pad-left no-pad-right">
             <div className="top-bar-left">
               <ul className="dropdown menu" data-dropdown-menu>
-                <li className="menu-text">Spiegel</li>
-                <li><a onClick={goToDashboardPage}>Care Profiles</a></li>
+                  <li className="menu-text bgGreen"><a onClick={goToDashboardPage}>ipseity</a></li>
+                <li className="whiteLeft"><a onClick={goToDashboardPage}>Care Profiles</a></li>
               </ul>
             </div>
             <div className="top-bar-right">
               <ul className="menu">
-                <li><a onClick={logoutAction}>Logout</a></li>
+                <li className="menu-text bgDarkBlue"><a onClick={logoutAction}>Logout</a></li>
               </ul>
             </div>
           </div>
@@ -29,8 +29,8 @@ function App({children, logoutAction, isLoggedin, goToDashboardPage}) {
       </div>
       : null
     }
-    <div className="row">
-      <div className="large-12 columns">
+    <div className="">
+      <div className="large-12 columns no-pad-right no-pad-left">
         { isLoggedin ? children : <LoginPage/> }
       </div>
         {

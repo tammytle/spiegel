@@ -13,19 +13,35 @@
 }
 
 body {
-	background-color: #F9F9F9;
-  font-family: 'Montserrat', sans-serif;
+	background-color: #F7F8F9;
+  font-family: 'avenir', sans-serif;
   font-weight: 300;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Montserrat', sans-serif;
+h1, h2, h4, h5, h6 {
+  font-family: 'avenir', sans-serif;
   font-weight: 300;
 }
 
-button {
-  font-family: 'Montserrat', sans-serif;
+h2 {
+  font-family: 'avenir', sans-serif;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+h3 {
+  font-family: 'avenir', sans-serif;
   font-weight: 300;
+  color: #FF8E93;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+h5 {
+  font-family: 'avenir', sans-serif;
+  font-weight: 300;
+  color: #FF8E93;
+  margin-bottom: 15px;
 }
 
 select {
@@ -34,16 +50,43 @@ select {
 
 label {
   font-weight: 300;
+  color: #4A4A4A;
+  font-size: 16px;
 }
 
 [type='text'] {
   font-weight: 300;
+  background-color: #F7F8F9;
+  border: 1px solid #EAEAEA;
+  box-shadow: none;
+}
+
+textarea {
+  font-weight: 300;
+  background-color: #F7F8F9;
+  border: 1px solid #EAEAEA;
+  box-shadow: none;
+}
+
+select {
+  font-weight: 300;
+  background-color: #F7F8F9;
+  border: 1px solid #EAEAEA;
+  box-shadow: none;
 }
 
 .card {
+  margin-top: 25px;
   background-color: #ffffff;
   border: 1px solid #EAEAEA;
-  padding: 25px;
+  padding: 100px 55px 25px 75px;
+}
+
+.createProfileSideNav {
+  margin-top: 25px;
+  background-color: #ffffff;
+  border: 1px solid #EAEAEA;
+  padding: 5px;
 }
 
 .careProfileCard {
@@ -66,4 +109,114 @@ label {
   bottom: 0;
   padding: 5px;
   position: absolute;
+}
+
+.top-bar {
+  background-color: #4F60F4;
+  padding: 0;
+  margin-bottom: 0;
+}
+
+.top-bar ul {
+  background-color: #4F60F4;
+}
+
+.menu > li > a {
+  color: #FFFFFF;
+  font-size: 18px;
+  font-weight: 900;
+  padding: 10px 25px;
+}
+.menu > li, .menu.horizontal > li {
+  color: #FFFFFF;
+  font-weight: 300;  
+}
+
+.button {
+  background-color: #4F60F4;
+  font-size: 18px;
+  font-family: 'Avenir', sans-serif;
+  font-weight: 900;
+  padding: 1rem 3rem;
+  margin: 0;
+}
+
+.button:hover {
+  background-color: #4758EC;
+}
+
+.careProfileLabel {
+  color: #656565;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+p {
+  color: #4A4A4A;
+  font-size: 16px;
+}
+
+.bgGreen {
+  background-color: #07D0C5;
+}
+
+.whiteLeft {
+  border-left: 8px solid #FFFFFF;
+}
+
+.bgDarkBlue {
+  background-color: #4758EC;
+}
+
+.circlePink {
+  width: 20px;
+  height: 20px;
+  background: #FCB2B4;
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  border-radius: 50px;
+  margin: 0 auto;
+}
+
+.circleGrey {
+  width: 20px;
+  height: 20px;
+  background: #E0E0E0;
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  border-radius: 50px;
+  margin: 0 auto;
+}
+
+.button-group {
+  margin: 0 auto;
+}
+
+.careProfileCatgoryButton {
+  text-transform: uppercase;
+  color: #4A4A4A;
+  font-size: 13px;
+  font-family: 'Avenir', sans-serif;
+  font-weight: 300;
+  padding: 1rem;
+  margin: 0 auto;
+  letter-spacing: 0.75px;
+}
+
+.careProfileCatgoryButton:hover {
+  color: #4a4a4a;
+}
+
+hr {
+  clear: both;
+  max-width: 75rem;
+  border-top: 0;
+  border-right: 0;
+  border-bottom: 30px solid #CCCCCC;
+  border-left: 0;
+}
+
+.bgCareProfile {
+  background-color: #4152E6;
+  height: 150px;
 }

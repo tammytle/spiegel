@@ -16,8 +16,9 @@ class CreateHobbiesPage extends Component {
   }
   render() {
     return (
-    <div className="card" style={{ paddingTop: '50px' }} >
-      <div className="large-offset-1 large-7 columns">
+    <div className="">
+      <div className="large-8 large-offset-1 columns">
+        <div className="card" style={{ paddingTop: '50px' }} >
         <div className="row">
           <div className="large-12 columns">
             <h3 className="caps">Hobbies</h3>
@@ -25,7 +26,7 @@ class CreateHobbiesPage extends Component {
         </div>
         {
         this.state.hobbies.personalHobbies.map((hobby, idx) => (
-          <div key={`personal_hobbies_${idx}`} style={{backgroundColor: '#F9F9F9', padding: '25px'}}>
+          <div key={`personal_hobbies_${idx}`} style={{border: '1px solid #eaeaea', padding: '25px', margin: '15px'}}>
             <div className="row">
                 <div className="large-12 columns end">
                   <label>Name of Hobby
@@ -50,14 +51,15 @@ class CreateHobbiesPage extends Component {
           </div>
           <div className="row">
             <div className="large-12 columns">
-              <button className="button" onClick={ () => { this.props.inputHobbies(this.state.hobbies); this.props.goToCreateLikesDislikes(); }}>Continue</button>
+              <br/><br/><button className="button bgGreen" style={{float: 'right'}} onClick={ () => { this.props.inputHobbies(this.state.hobbies); this.props.goToCreateLikesDislikes(); }}>Continue</button>
             </div>
           </div>
         </div>
-        <div className="large-2 large-offset-1 columns end">
-          <CreateProfileNav/>
         </div>
-    </div>
+        <div className="large-2 columns createProfileSideNav end">
+          <CreateProfileNav/><br/><br/>
+        </div>
+      </div>
     );
   }
 

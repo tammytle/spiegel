@@ -23,8 +23,9 @@ class CreateDailyLivingPage extends Component {
   }
   render() {
     return (
-    <div className="card" style={{ paddingTop: '50px' }} >
-      <div className="large-offset-1 large-7 columns">
+    <div className="">
+      <div className="large-8 large-offset-1 columns">
+        <div className="card" style={{ paddingTop: '50px' }} >
         <div className="row">
           <div className="large-12 columns">
             <h3 className="caps">Daily Living</h3>
@@ -88,14 +89,15 @@ class CreateDailyLivingPage extends Component {
         </div>
         <div className="row">
           <div className="large-12 columns">
-            <button className="button" onClick={ () => { this.props.goToCreateHobbiesPage(); this.props.inputDailyLiving(this.state.dailyLiving); }}>Continue</button>
+            <br/><br/><button className="button bgGreen" style={{float: 'right'}} onClick={ () => { this.props.goToCreateHobbiesPage(); this.props.inputDailyLiving(this.state.dailyLiving); }}>Continue</button>
           </div>
         </div>
+        </div>
+        </div>
+        <div className="large-2 columns createProfileSideNav end">
+          <CreateProfileNav/><br/><br/>
+        </div>
       </div>
-      <div className="large-2 large-offset-1 columns end">
-        <CreateProfileNav/>
-      </div>
-    </div>
     );
   }
   updateState(propertyName) {

@@ -11,13 +11,16 @@ class DashboardPage extends Component {
   render() {
     return (
       <div>
+        <div className="large-12 columns bgCareProfile no-pad-left no-pad-right">
+          <h2 className="caps">Care Profiles</h2>
+        </div>
         <div className="row">
           <div className="large-12 columns">
             <div className="large-6 columns no-pad-left">
-              <h4 className="caps">Care Profiles</h4>
+              <h3 className="caps">Care Profiles</h3>
             </div>
             <div className="large-6 columns text-right no-pad-right">
-              <button className="button" onClick={ () => { this.props.resetProfile(); this.props.goToCreateBasicInfoPage(); }}>Create a Care Profile</button>
+              <button className="button bgGreen" onClick={ () => { this.props.resetProfile(); this.props.goToCreateBasicInfoPage(); }}>Create a Care Profile</button>
             </div>
           </div>
         </div>

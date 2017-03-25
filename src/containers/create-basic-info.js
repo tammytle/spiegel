@@ -27,9 +27,9 @@ class CreateBasicInfoPage extends Component {
   }
   render() {
     return (
-    <div>
-      <div className="card" style={{ paddingTop: '50px' }} >
-        <div className="large-offset-1 large-7 columns">
+    <div className="">
+      <div className="large-8 large-offset-1 columns">
+        <div className="card" style={{ paddingTop: '50px' }} >
           <div className="row">
             <div className="large-12 columns">
               <h3 className="caps">Basic Information</h3>
@@ -58,7 +58,7 @@ class CreateBasicInfoPage extends Component {
                   <input type="text" value={this.state.doB} onChange={(e) => this.updateState('doB')(e)}/>
                 </label>
               </div>
-          </div>
+          </div><br/>
           <div className="row">
             <div className="large-12 columns">
               <br/><h5>Relationships</h5>
@@ -107,7 +107,7 @@ class CreateBasicInfoPage extends Component {
           </div>
           {
             this.state.basicInfo.significantPeople.map((person, idx) => (
-            <div key={`significant_person_${idx}`} style={{backgroundColor: '#F9F9F9', padding: '25px'}}>
+            <div key={`significant_person_${idx}`} style={{border: '1px solid #eaeaea', padding: '25px', margin: '15px'}}>
               <div className="row">
                   <div className="large-6 columns no-pad-right">
                     <label>First name
@@ -140,30 +140,29 @@ class CreateBasicInfoPage extends Component {
             </div>
             ))
           }
-
           <div className="row">
             <div className="large-12 columns end">
               <a className="button" style={{ width: '100%' }} onClick={ () => this.addPerson() }>Add Another</a>
             </div>
           </div>
           <div className="row">
-            <div className="large-12 columns end">
-              <label>Pets
+            <div className="large-12 columns end"><br/><br/>
+              <label><h5>Pets</h5>
                 <textarea value={this.state.pets} onChange={(e) => this.updateState('pets')(e)}/>
               </label>
             </div>
           </div>
           <div className="row">
             <div className="large-12 columns">
-              <button className="button" onClick={ () => { this.props.inputbasicinfo(this.state.basicInfo); this.props.goToMedicalInformation(); }}>Continue</button>
+              <br/><br/><button className="button bgGreen" style={{float: 'right'}} onClick={ () => { this.props.inputbasicinfo(this.state.basicInfo); this.props.goToMedicalInformation(); }}>Continue</button>
             </div>
           </div>
         </div>
-        <div className="large-2 large-offset-1 columns end">
-          <CreateProfileNav/>
+        </div>
+        <div className="large-2 columns createProfileSideNav end">
+          <CreateProfileNav/><br/><br/>
         </div>
       </div>
-    </div>
     );
   }
 
