@@ -11,23 +11,32 @@ class DashboardPage extends Component {
   render() {
     return (
       <div>
-        <div className="large-12 columns bgCareProfile no-pad-left no-pad-right">
-          <h2 className="caps">Care Profiles</h2>
-        </div>
-        <div className="row">
-          <div className="large-12 columns">
-            <div className="large-6 columns no-pad-left">
-              <h3 className="caps">Care Profiles</h3>
-            </div>
-            <div className="large-6 columns text-right no-pad-right">
-              <button className="button bgGreen" onClick={ () => { this.props.resetProfile(); this.props.goToCreateBasicInfoPage(); }}>Create a Care Profile</button>
-            </div>
+        <div className="large-12 bgCareProfile no-pad-right no-pad-left">
+          <div className="large-5 large-offset-1 columns">
+            <h2>Care Profiles</h2>
+          </div>
+          <div className="large-5 columns text-right end">
+            <button className="button bgGreen" onClick={ () => { this.props.resetProfile(); this.props.goToCreateBasicInfoPage(); }}>Create a Care Profile</button>
           </div>
         </div>
-        <div className="row">
+        <div className="large-10 large-offset-1 columns end">
+          <table style={{marginTop: '25px' }} cellSpacing="0" cellPadding="0">
+            <thead>
+              <tr>
+                <th width="200">Name</th>
+                <th>Contact</th>
+                <th width="150">Last updated</th>
+              </tr>
+            </thead>
             { this.props.careProfiles.map( (profile, idx) => {
-              return <div className="large-3 columns end"><div className="careProfileCard" onClick={this.props.goToCareProfile(idx)} key={`care_profile_${idx}`}><img src={'http://placehold.it/150x150'}/><br/><br/><h5>{profile.getIn(['basicInfo', 'firstName'])} {profile.getIn(['basicInfo', 'lastName'])}</h5><div className="cardProfileCardView">View</div></div></div>;
+              return ( <tbody><tr onClick={this.props.goToCareProfile(idx)} key={`care_profile_${idx}`}>
+                <td width="25%" style={{textTransform: 'capitalize'}}>{profile.getIn(['basicInfo', 'firstName'])} {profile.getIn(['basicInfo', 'lastName'])}</td>
+                <td width="30%">Content Goes Here</td>
+                <td width="40%">Content Goes Here</td>
+              </tr>
+              </tbody> );
             }) }
+          </table>
         </div>
       </div>
     );

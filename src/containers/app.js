@@ -10,7 +10,7 @@ function App({children, logoutAction, isLoggedin, goToDashboardPage}) {
   return (
     <div>
     { isLoggedin ?
-      <div className="top-bar" style={{ marginBottom: '25px' }}>
+      <div className="top-bar">
         <div>
           <div className="large-12 columns no-pad-left no-pad-right">
             <div className="top-bar-left">
@@ -21,7 +21,7 @@ function App({children, logoutAction, isLoggedin, goToDashboardPage}) {
             </div>
             <div className="top-bar-right">
               <ul className="menu">
-                <li className="menu-text bgDarkBlue"><a onClick={logoutAction}>Logout</a></li>
+                <li className="menu-text"><a onClick={logoutAction}>Logout</a></li>
               </ul>
             </div>
           </div>

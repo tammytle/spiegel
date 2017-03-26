@@ -31,35 +31,35 @@ class CreateMedicalInformation extends Component {
         <div className="row">
             <div className="large-12 columns end">
               <label>Medical Conditions (other than dementia)
-                <textarea value={this.state.medicalConditions} onChange={(e) => this.updateState('medicalConditions')(e)}/>
+                <textarea rows={4} value={this.state.medicalConditions} onChange={(e) => this.updateState('medicalConditions')(e)}/>
               </label>
             </div>
         </div>
         <div className="row">
             <div className="large-12 columns end">
               <label>Allergies
-                <textarea value={this.state.allergies} onChange={(e) => this.updateState('allergies')(e)}/>
+                <textarea rows={4} value={this.state.allergies} onChange={(e) => this.updateState('allergies')(e)}/>
               </label>
             </div>
         </div>
         <div className="row">
             <div className="large-12 columns end">
               <label>Hearing
-                <textarea value={this.state.hearing} onChange={(e) => this.updateState('hearing')(e)}/>
+                <textarea rows={4} value={this.state.hearing} onChange={(e) => this.updateState('hearing')(e)}/>
               </label>
             </div>
         </div>
         <div className="row">
             <div className="large-12 columns end">
               <label>Vision
-                <textarea value={this.state.vision} onChange={(e) => this.updateState('vision')(e)}/>
+                <textarea rows={4} value={this.state.vision} onChange={(e) => this.updateState('vision')(e)}/>
               </label>
             </div>
         </div>
         <div className="row">
             <div className="large-12 columns end">
               <label>Mobility
-                <textarea value={this.state.mobility} onChange={(e) => this.updateState('mobility')(e)}/>
+                <textarea rows={4} value={this.state.mobility} onChange={(e) => this.updateState('mobility')(e)}/>
               </label>
             </div>
         </div>
