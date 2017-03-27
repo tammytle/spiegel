@@ -23,7 +23,7 @@ if (!__TEST__) {
   ReactDOM.render(
     <div>
       <Provider store={ store }>
-        <Router history={ history }>
+        <Router history={ history } onUpdate={() => window.scrollTo(0, 0)}>
           { routes }
         </Router>
       </Provider>

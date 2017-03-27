@@ -18,7 +18,7 @@ body {
   font-weight: 300;
 }
 
-h1, h2, h4, h5, h6 {
+h1{
   font-family: 'avenir', sans-serif;
   font-weight: 300;
 }
@@ -38,6 +38,7 @@ h3 {
 }
 
 h4 {
+  font-family: 'avenir', sans-serif;
   font-size: 32px;
   color: #4A4A4A;
   font-weight: 500;
@@ -48,6 +49,13 @@ h5 {
   font-weight: 300;
   color: #FF8E93;
   margin-bottom: 15px;
+}
+
+h6 {
+  color: #656565;
+  font-weight: 600;
+  font-family: 'avenir', sans-serif;
+  font-size: 18px;
 }
 
 select {
@@ -152,12 +160,6 @@ select {
   background-color: #4758EC;
 }
 
-.careProfileLabel {
-  color: #656565;
-  font-weight: 500;
-  font-size: 16px;
-}
-
 p {
   color: #4A4A4A;
   font-size: 16px;
@@ -259,4 +261,21 @@ table {
 
 .careProfileButton:hover {
   cursor: pointer;
+}
+
+.careProfileViewCard {
+  border: 1px solid rgba(234, 234, 234, 60);
+  padding: 100px 55px 25px 75px;
+  box-shadow: 3px 3px 3px #eaeaea;
+  background-color: #ffffff;
+  min-height: 500px;
+}
+
+hr {
+  clear: both;
+  max-width: 75rem;
+  border-top: 0;
+  border-right: 0;
+  border-bottom: 1px solid #EAEAEA;
+  border-left: 0;
 }
