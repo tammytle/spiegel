@@ -15,6 +15,7 @@ import './styles/index.pcss';
 import './styles/foundation.css';
 import './styles/style.css';
 import './styles/fontawesome-webfont.ttf';
+import './img/logo.png';
 
 const store = configureStore({});
 const history = syncHistoryWithStore(browserHistory, store);

@@ -24,15 +24,15 @@ class DashboardPage extends Component {
             <thead>
               <tr>
                 <th width="200">Name</th>
-                <th>Contact</th>
+                <th>Date of Birth</th>
                 <th width="150">Last updated</th>
               </tr>
             </thead>
             { this.props.careProfiles.map( (profile, idx) => {
               return ( <tbody><tr onClick={this.props.goToCareProfile(idx)} key={`care_profile_${idx}`}>
                 <td width="25%" style={{textTransform: 'capitalize'}}>{profile.getIn(['basicInfo', 'firstName'])} {profile.getIn(['basicInfo', 'lastName'])}</td>
-                <td width="30%">Content Goes Here</td>
-                <td width="40%">Content Goes Here</td>
+                <td width="30%">{profile.getIn(['basicInfo', 'dOb'])}</td>
+                <td width="40%">1 April 2017</td>
               </tr>
               </tbody> );
             }) }

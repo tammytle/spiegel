@@ -7,6 +7,8 @@ import { browserHistory } from 'react-router';
 import { routerMiddleware } from 'react-router-redux';
 import logger from './logger';
 import rootReducer from '../reducers';
+import {persistStore, autoRehydrate} from 'redux-persist';
+import immutableTransform from 'redux-persist-transform-immutable';
 
 function configureStore(initialState) {
   const store = compose(
@@ -15,6 +17,7 @@ function configureStore(initialState) {
   )(createStore)(rootReducer, initialState);
 
   _enableHotLoader(store);
+  persistStore(store, {transforms: [immutableTransform()]});
   return store;
 }
 
@@ -34,6 +37,7 @@ function _getMiddleware() {
 
 function _getEnhancers() {
   let enhancers = [
+    autoRehydrate(),
     persistState('session', _getStorageConfig()),
   ];
 

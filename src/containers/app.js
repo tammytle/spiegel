@@ -15,7 +15,9 @@ function App({children, logoutAction, isLoggedin, goToDashboardPage}) {
           <div className="large-12 columns no-pad-left no-pad-right">
             <div className="top-bar-left">
               <ul className="dropdown menu" data-dropdown-menu>
-                  <li className="menu-text bgGreen"><a onClick={goToDashboardPage}>ipseity</a></li>
+                  <li className="menu-text bgGreen"><a onClick={goToDashboardPage}>
+                    <img src={require('../img/logo.png')}/>
+                  </a></li>
                 <li className="whiteLeft"><a onClick={goToDashboardPage}>Care Profiles</a></li>
               </ul>
             </div>

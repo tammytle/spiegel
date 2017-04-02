@@ -18,6 +18,17 @@ body {
   font-weight: 300;
 }
 
+.bluebackground {
+  background-color: #4758EC;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.whitebackground {
+  background-color: #ffffff;
+  padding: 25px;
+}
+
 h1{
   font-family: 'avenir', sans-serif;
   font-weight: 300;
@@ -58,6 +69,13 @@ h6 {
   font-size: 18px;
 }
 
+.loginTitle {
+  font-family: 'avenir', sans-serif;
+  font-size: 48px;
+  color: #4F60F4;
+  font-weight: 900;
+}
+
 select {
   font-weight: 300;
 }
@@ -72,6 +90,20 @@ label {
 [type='text'] {
   font-weight: 300;
   background-color: #F7F8F9;
+  border: 1px solid #EAEAEA;
+  box-shadow: none;
+}
+
+input {
+  font-weight: 300;
+  background-color: #F7F8F9 !important;
+  border: 1px solid #EAEAEA;
+  box-shadow: none;
+}
+
+input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
+  font-weight: 300;
+  background-color: #F7F8F9 !important;
   border: 1px solid #EAEAEA;
   box-shadow: none;
 }
@@ -134,6 +166,10 @@ select {
 
 .top-bar ul {
   background-color: #4F60F4;
+}
+
+.top-bar-right {
+  padding-top: 10px;
 }
 
 .menu > li > a {
@@ -260,6 +296,19 @@ table {
 }
 
 .careProfileButton:hover {
+  cursor: pointer;
+}
+
+.greenButton {
+  background-color: #07D0C5;
+  font-size: 18px;
+  font-family: 'Avenir', sans-serif;
+  font-weight: 900;
+  padding: .8em 3.5em;
+  color: #ffffff;
+}
+
+.greenButton:hover {
   cursor: pointer;
 }
 
