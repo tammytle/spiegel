@@ -106,7 +106,7 @@ class CreateBehavioursPage extends Component {
         </div>
         <div className="row">
           <div className="large-12 columns">
-            <br/><br/><button className="button bgGreen" style={{float: 'right'}} onClick={ () => { this.props.inputBehaviours(this.state.behaviours); this.props.createProfile(); this.props.goToDashboardPage();  }}>Continue</button>
+            <br/><br/><button className="button bgGreen" style={{float: 'right'}} onClick={ () => { this.props.inputBehaviours(this.state.behaviours); this.props.createProfile(); this.props.goToDashboardPage();  }}>Save</button>
           </div>
         </div>
         </div>

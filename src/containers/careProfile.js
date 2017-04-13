@@ -9,7 +9,8 @@ class careProfilesPage extends Component {
 
     this.state = {
       activeTab: 'routine',
-      isEditMode: false
+      isEditMode: false,
+      isEmpty: false
     };
   }
 

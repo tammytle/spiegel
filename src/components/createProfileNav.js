@@ -5,14 +5,14 @@ import { push } from 'react-router-redux';
 function createProfileNav({goToCreateBasicInfoPage, goToCreateLifeStoryPage, goToCreateRoutinePage, goToCreateMealTimePage, goToCreateDailyLivingPage, goToCreateHobbiesPage, goToCreateLikesDislikes, goToCreateBehavioursPage, goToMedicalInformation}) {
   return (
     <div className="text-center button-group" style={{ paddingTop: '25px' }}>
-      <a className="careProfileCatgoryButton" style={{ width: '100%' }} onClick={goToCreateBasicInfoPage}><div className="circlePink"/><br/>Basic Information<br/><hr width="1" size="100"/></a>
-      <a className="careProfileCatgoryButton" style={{ width: '100%' }} onClick={goToMedicalInformation}><div className="circleGrey"/><br/>Medical<br/><hr width="1" size="100"/></a>
-      <a className="careProfileCatgoryButton" style={{ width: '100%' }} onClick={goToCreateLifeStoryPage}><div className="circleGrey"/><br/>Life Story<br/><hr width="1" size="100"/></a>
-      <a className="careProfileCatgoryButton" style={{ width: '100%' }} onClick={goToCreateRoutinePage}><div className="circleGrey"/><br/>Routine<br/><hr width="1" size="100"/></a>
-      <a className="careProfileCatgoryButton" style={{ width: '100%' }} onClick={goToCreateMealTimePage}><div className="circleGrey"/><br/>Meal Time<br/><hr width="1" size="100"/></a>
-      <a className="careProfileCatgoryButton" style={{ width: '100%' }} onClick={goToCreateDailyLivingPage}><div className="circleGrey"/><br/>Daily Living<br/><hr width="1" size="100"/></a>
-      <a className="careProfileCatgoryButton" style={{ width: '100%' }} onClick={goToCreateHobbiesPage}><div className="circleGrey"/><br/>Hobbies<br/><hr width="1" size="100"/></a>
-      <a className="careProfileCatgoryButton" style={{ width: '100%' }} onClick={goToCreateLikesDislikes}><div className="circleGrey"/><br/>Likes & Dislikes<br/><hr width="1" size="100"/></a>
+      <a className="careProfileCatgoryButton" style={{ width: '100%' }} onClick={goToCreateBasicInfoPage}><div className="circlePink"/><br/>Basic Information<hr width="1" size="100"/></a><hr/>
+      <a className="careProfileCatgoryButton" style={{ width: '100%' }} onClick={goToMedicalInformation}><div className="circleGrey"/><br/>Medical<hr width="1" size="100"/></a><hr/>
+      <a className="careProfileCatgoryButton" style={{ width: '100%' }} onClick={goToCreateLifeStoryPage}><div className="circleGrey"/><br/>Life Story<hr width="1" size="100"/></a><hr/>
+      <a className="careProfileCatgoryButton" style={{ width: '100%' }} onClick={goToCreateRoutinePage}><div className="circleGrey"/><br/>Routine<hr width="1" size="100"/></a><hr/>
+      <a className="careProfileCatgoryButton" style={{ width: '100%' }} onClick={goToCreateMealTimePage}><div className="circleGrey"/><br/>Meal Time<hr width="1" size="100"/></a><hr/>
+      <a className="careProfileCatgoryButton" style={{ width: '100%' }} onClick={goToCreateDailyLivingPage}><div className="circleGrey"/><br/>Daily Living<hr width="1" size="100"/></a><hr/>
+      <a className="careProfileCatgoryButton" style={{ width: '100%' }} onClick={goToCreateHobbiesPage}><div className="circleGrey"/><br/>Hobbies<hr width="1" size="100"/></a><hr/>
+      <a className="careProfileCatgoryButton" style={{ width: '100%' }} onClick={goToCreateLikesDislikes}><div className="circleGrey"/><br/>Likes & Dislikes<hr width="1" size="100"/></a><hr/>
       <a className="careProfileCatgoryButton" style={{ width: '100%' }} onClick={goToCreateBehavioursPage}><div className="circleGrey"/><br/>Behaviours</a>
     </div>
   );

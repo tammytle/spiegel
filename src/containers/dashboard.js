@@ -31,7 +31,7 @@ class DashboardPage extends Component {
             { this.props.careProfiles.map( (profile, idx) => {
               return ( <tbody><tr onClick={this.props.goToCareProfile(idx)} key={`care_profile_${idx}`}>
                 <td width="25%" style={{textTransform: 'capitalize'}}>{profile.getIn(['basicInfo', 'firstName'])} {profile.getIn(['basicInfo', 'lastName'])}</td>
-                <td width="30%">{profile.getIn(['basicInfo', 'dOb'])}</td>
+                <td width="30%">{profile.getIn(['basicInfo', 'doB'])}</td>
                 <td width="40%">1 April 2017</td>
               </tr>
               </tbody> );
