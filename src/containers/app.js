@@ -17,10 +17,10 @@ function App({children, logoutAction, isLoggedin, goToDashboardPage}) {
               <ul className="dropdown menu" data-dropdown-menu>
                   <li className="menu-text bgGreenLogo"><a onClick={goToDashboardPage}>
                     <div className="unskew">
-                      <img src={require('../img/logo.png')}/>
+                    <img src={require('../img/logo.png')}/>
                     </div>
                   </a></li>
-                <li><a onClick={goToDashboardPage}>Care Profiles</a></li>
+                <li className="whiteLeft"><a onClick={goToDashboardPage}>Care Profiles</a></li>
               </ul>
             </div>
             <div className="top-bar-right">

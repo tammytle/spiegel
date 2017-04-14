@@ -60,7 +60,7 @@ function mapDispatchToProps(dispatch) {
 
 function mapStateToProps(state) {
   return {
-    careProfiles: state.careProfiles
+    careProfiles: state.careProfiles,
   };
 }
 

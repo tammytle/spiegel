@@ -15,7 +15,7 @@ class LoginPage extends Component {
     return (
       <div className="bluebackground">
         <div style={{padding: '20px'}}>
-          <img src={require('../img/logo-text.png')}/>
+          <img src={require('../img/logo-text.png')} style={{width: '118px'}}/>
         </div>
         <br/><br/><div className="large-4 columns large-offset-4 whitebackground end">
           <div className="row text-center">

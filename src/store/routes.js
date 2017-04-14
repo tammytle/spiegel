@@ -13,8 +13,8 @@ import CreateLikesDislikes from '../containers/create-likes-dislikes';
 import CreateBehavioursPage from '../containers/create-behaviours-page';
 import CreateMedicalInformation from '../containers/create-medical-information';
 import LoginPage from '../containers/login-page';
+import HomePage from '../containers/homepage';
 import careProfilePage from '../containers/careProfile';
-
 
 export default (
   <Route path="/" component={ App }>
@@ -32,5 +32,6 @@ export default (
     <Route path="create-likes-dislikes" component={ CreateLikesDislikes }/>
     <Route path="create-behaviours-page" component={ CreateBehavioursPage }/>
     <Route path="create-medical-information" component={ CreateMedicalInformation }/>
+    <Route path="homepage" component={ HomePage }/>
   </Route>
 );
