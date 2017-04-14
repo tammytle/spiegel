@@ -1,6 +1,7 @@
 import React, { PropTypes, Component } from 'react';
 import { connect } from 'react-redux';
 import {login} from '../actions/session';
+import { push } from 'react-router-redux';
 
 class LoginPage extends Component {
   constructor(props) {
@@ -14,8 +15,8 @@ class LoginPage extends Component {
   render() {
     return (
       <div className="bluebackground">
-        <div style={{padding: '20px'}}>
-          <img src={require('../img/logo-text.png')} style={{width: '118px'}}/>
+        <br/><div className="row">
+          <img src={require('../img/logo-text.png')} style={{width: '118px'}} onClick={ () => { this.props.goToHomePage(); } }/>
         </div>
         <br/><br/><div className="large-4 columns large-offset-4 whitebackground end">
           <div className="row text-center">
@@ -59,12 +60,14 @@ class LoginPage extends Component {
 }
 
 LoginPage.propTypes = {
-  login: PropTypes.func
+  login: PropTypes.func,
+  goToHomePage: PropTypes.func
 };
 
 function mapDispatchToProps(dispatch) {
   return {
-    login: (username, password) => () => dispatch(login(username, password))
+    login: (username, password) => () => dispatch(login(username, password)) && dispatch(push('/dashboard')),
+    goToHomePage: () => dispatch(push('/homepage'))
   };
 }
 

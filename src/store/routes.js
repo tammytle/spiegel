@@ -18,7 +18,7 @@ import careProfilePage from '../containers/careProfile';
 
 export default (
   <Route path="/" component={ App }>
-    <IndexRedirect to="dashboard"/>
+    <IndexRedirect to="homepage"/>
     <Route path="counter" component={ CounterPage }/>
     <Route path="dashboard" component={ DashboardPage }/>
     <Route path="login-page" component={ LoginPage }/>

@@ -4,8 +4,10 @@ import { push } from 'react-router-redux';
 import { logout } from '../actions/session';
 import LoginPage from '../containers/login-page';
 
-function App({children, logoutAction, isLoggedin, goToDashboardPage}) {
-  // const currentLocation = location.pathname;
+function App({children, logoutAction, isLoggedin, goToDashboardPage, location}) {
+  const currentLocation = location.pathname;
+  const isLoginPageOrHomePage = ['/login-page', '/homepage'].indexOf(currentLocation) !== -1;
+  console.log(currentLocation, isLoggedin, isLoginPageOrHomePage);
   // const doNotShowNav = ['/dashboard', '/care-profile', '/login'];
   return (
     <div>
@@ -35,7 +37,9 @@ function App({children, logoutAction, isLoggedin, goToDashboardPage}) {
     }
     <div className="">
       <div className="large-12 columns no-pad-right no-pad-left">
-        { isLoggedin ? children : <LoginPage/> }
+        { isLoginPageOrHomePage && !isLoggedin ? children : null }
+        { !isLoginPageOrHomePage && isLoggedin ? children : null }
+        { !isLoginPageOrHomePage && !isLoggedin ? <LoginPage/> : null }
       </div>
         {
           // isLoggedin && !doNotShowNav.find((item) => currentLocation.indexOf(item) !== -1) ?
@@ -61,7 +65,7 @@ function App({children, logoutAction, isLoggedin, goToDashboardPage}) {
 }
 
 App.propTypes = {
-  // location: React.PropTypes.object,
+  location: React.PropTypes.object,
   children: React.PropTypes.node,
   isLoggedin: React.PropTypes.bool,
   logoutAction: React.PropTypes.func,
@@ -71,7 +75,7 @@ App.propTypes = {
 function mapDispatchToProps(dispatch) {
   return {
     goToDashboardPage: () => dispatch(push('/dashboard')),
-    logoutAction: () => dispatch(logout())
+    logoutAction: () => dispatch(logout()) && dispatch(push('/login-page'))
   };
 }
 
