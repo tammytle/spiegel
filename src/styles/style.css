@@ -67,6 +67,7 @@ h6 {
   font-weight: 600;
   font-family: 'avenir', sans-serif;
   font-size: 18px;
+  margin-bottom: 0px;
 }
 
 .loginTitle {
@@ -200,6 +201,7 @@ select {
 p {
   color: #4A4A4A;
   font-size: 16px;
+  margin-bottom: 20px;
 }
 
 .bgGreen {

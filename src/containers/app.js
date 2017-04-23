@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { push } from 'react-router-redux';
 import { logout } from '../actions/session';
-import LoginPage from '../containers/login-page';
+import HomePage from '../containers/homepage';
 
 function App({children, logoutAction, isLoggedin, goToDashboardPage, location}) {
   const currentLocation = location.pathname;
@@ -39,7 +39,7 @@ function App({children, logoutAction, isLoggedin, goToDashboardPage, location}) 
       <div className="large-12 columns no-pad-right no-pad-left">
         { isLoginPageOrHomePage && !isLoggedin ? children : null }
         { !isLoginPageOrHomePage && isLoggedin ? children : null }
-        { !isLoginPageOrHomePage && !isLoggedin ? <LoginPage/> : null }
+        { !isLoginPageOrHomePage && !isLoggedin ? <HomePage/> : null }
       </div>
         {
           // isLoggedin && !doNotShowNav.find((item) => currentLocation.indexOf(item) !== -1) ?
@@ -75,7 +75,7 @@ App.propTypes = {
 function mapDispatchToProps(dispatch) {
   return {
     goToDashboardPage: () => dispatch(push('/dashboard')),
-    logoutAction: () => dispatch(logout()) && dispatch(push('/login-page'))
+    logoutAction: () => dispatch(logout()) && dispatch(push('/homepage'))
   };
 }
 
