@@ -7,12 +7,12 @@
     "node": "6"
   },
   "scripts": {
-    "build": "cross-env NODE_ENV=production webpack -p",
-    "dev:server": "cross-env NODE_ENV=development PORT=3000 nodemon --use_strict server/node-server.js",
+    "build": "webpack -p",
+    "dev:server": "node server/node-server.js",
     "dev:client": "cross-env NODE_ENV=development webpack-dev-server -d --inline --hot --progress --no-info",
     "dev": "concurrently -r 'npm run dev:client' 'npm run dev:server'",
     "postinstall": "npm run build",
-    "start": "cross-env NODE_ENV=production node --use_strict server/node-server.js",
+    "start": "node server/node-server.js",
     "heroku-postbuild": "npm run build"
   },
   "devDependencies": {
